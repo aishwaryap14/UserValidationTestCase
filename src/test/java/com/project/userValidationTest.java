@@ -125,4 +125,43 @@ public class userValidationTest {
         Assert.assertEquals(false,result);
     }
 
+    //UC4
+
+
+    @Test
+    public void EnterPhoneNumber_whenProper_returnTrue() {
+        UserValidation userValidation=new UserValidation();
+        boolean result=userValidation.validatePhoneNumber("+91 9876543210");
+        Assert.assertEquals(true,result);
+    }
+    @Test
+    public void EnterPhoneNumber_whenInvalidContryCode_returnFalse() {
+        UserValidation userValidation=new UserValidation();
+        boolean result=userValidation.validatePhoneNumber("+9561 9876543210");
+        Assert.assertEquals(false,result);
+    }
+    @Test
+    public void EnterPhoneNumber_whenLessDigits_returnFalse() {
+        UserValidation userValidation=new UserValidation();
+        boolean result=userValidation.validatePhoneNumber("+91 987654");
+        Assert.assertEquals(true,result);
+    }
+    @Test
+    public void EnterPhoneNumber_whenMoreDigits_returnFalse() {
+        UserValidation userValidation=new UserValidation();
+        boolean result=userValidation.validatePhoneNumber("+91 98765432107798");
+        Assert.assertEquals(false,result);
+    }
+    @Test
+    public void EnterPhoneNumber_whenWithAlphabates_returnFalse() {
+        UserValidation userValidation=new UserValidation();
+        boolean result=userValidation.validatePhoneNumber("+91 987654321zero");
+        Assert.assertEquals(false,result);
+    }
+    @Test
+    public void EnterPhoneNumber_whenWithSpecialChar_returnFalse() {
+        UserValidation userValidation=new UserValidation();
+        boolean result=userValidation.validatePhoneNumber("+91 ##9876543210");
+        Assert.assertEquals(false,result);
+    }
 }
