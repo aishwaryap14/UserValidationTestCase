@@ -179,4 +179,17 @@ public class userValidationTest {
         boolean result=userValidation.validatePassword("pass123");
         Assert.assertEquals(false,result);
     }
+    @Test
+    public void EnterPassword_whenProperwithUpperCase_returnTrue() {
+        UserValidation userValidation=new UserValidation();
+        boolean result=userValidation.validatePassword("Password");
+        Assert.assertEquals(true,result);
+    }
+    @Test
+    public void EnterPassword_whenAllUpperCase_returnTrue() {
+        UserValidation userValidation=new UserValidation();
+        boolean result=userValidation.validatePassword("PASSWORD");
+        Assert.assertEquals(true,result);
+    }
+    
 }
