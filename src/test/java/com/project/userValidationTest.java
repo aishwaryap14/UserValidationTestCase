@@ -197,6 +197,18 @@ public class userValidationTest {
         boolean result=userValidation.validatePassword("123456789");
         Assert.assertEquals(true,result);
     }
-   
+    @Test
+    public void EnterPassword_whenOneSpecialChar_returnTrue() {
+        UserValidation userValidation=new UserValidation();
+        boolean result=userValidation.validatePassword("Password@123");
+        Assert.assertEquals(true,result);
+    }
+    @Test
+    public void EnterPassword_whenSpecialChar_returnFalse() {
+        UserValidation userValidation=new UserValidation();
+        boolean result=userValidation.validatePassword("Pass$#word@123");
+        Assert.assertEquals(false,result);
+    }
+
 
 }

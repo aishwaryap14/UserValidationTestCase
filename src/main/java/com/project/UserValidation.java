@@ -7,7 +7,8 @@ public class UserValidation {
     public static final String Email_Pattern="^[A-Za-z]{1,}([.]{1}[0-9a-zA-Z+-]{1,}){0,}[@]{1}" +
                                         "[0-9a-zA-Z]{1,}[.]{1}[a-zA-z]{2,4}([.]{1}[a-zA-Z]{2,4}?)$";
     public static final String Email_PhoneNumber="^[+]{1}([0-9]{0,2})[ ]{1}([0-9]{1,10}?)$";
-    public static final String Password_Pattern="^[a-zA-Z0-9]{8,}$";
+    public static final String Password_Pattern="^([a-zA-Z0-9]{8,})([@#$%^&*-_+=)]{1})" +
+                                                "([a-z0-9A-Z]{1,}?)$";
 
     public boolean validateFirstname(String fname) {
         Pattern pattern=Pattern.compile(Name_Pattern);
