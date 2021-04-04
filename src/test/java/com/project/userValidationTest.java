@@ -164,4 +164,19 @@ public class userValidationTest {
         boolean result=userValidation.validatePhoneNumber("+91 ##9876543210");
         Assert.assertEquals(false,result);
     }
+
+    //UC5
+
+    @Test
+    public void EnterPassword_whenProper_returnTrue() {
+        UserValidation userValidation=new UserValidation();
+        boolean result=userValidation.validatePassword("password123");
+        Assert.assertEquals(true,result);
+    }
+    @Test
+    public void EnterPassword_whenNotProper_returnFalse() {
+        UserValidation userValidation=new UserValidation();
+        boolean result=userValidation.validatePassword("pass123");
+        Assert.assertEquals(false,result);
+    }
 }
