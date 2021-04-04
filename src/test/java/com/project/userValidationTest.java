@@ -124,6 +124,60 @@ public class userValidationTest {
         boolean result= userValidation.validateEmail("firstname#.lastname^@yaho.in");
         Assert.assertEquals(false,result);
     }
+    @Test
+    public void enterEmail_whenwithoutAtTheRateSym_returnFalse() {
+        UserValidation userValidation =new UserValidation();
+        boolean result= userValidation.validateEmail("firstname.lastname");
+        Assert.assertEquals(false,result);
+    }
+    @Test
+    public void enterEmail_whenNotProper4_returnFalse() {
+        UserValidation userValidation =new UserValidation();
+        boolean result= userValidation.validateEmail("firstnamelastname@.com.in");
+        Assert.assertEquals(false,result);
+    }
+    @Test
+    public void enterEmail_whenNotProper5_returnFalse() {
+        UserValidation userValidation =new UserValidation();
+        boolean result= userValidation.validateEmail("firstnamelastname@gmail.a");
+        Assert.assertEquals(false,result);
+    }
+    @Test
+    public void enterEmail_whenNotProper6_returnFalse() {
+        UserValidation userValidation =new UserValidation();
+        boolean result= userValidation.validateEmail(".firstname.lastname@gmail.com");
+        Assert.assertEquals(false,result);
+    }
+    @Test
+    public void enterEmail_whenNotProper7_returnFalse() {
+        UserValidation userValidation =new UserValidation();
+        boolean result= userValidation.validateEmail("first()name.lastname@gmail.com.in");
+        Assert.assertEquals(false,result);
+    }
+    @Test
+    public void enterEmail_whenNotProper8_returnFalse() {
+        UserValidation userValidation =new UserValidation();
+        boolean result= userValidation.validateEmail("firstname..lastname@gmail.com.in");
+        Assert.assertEquals(false,result);
+    }
+    @Test
+    public void enterEmail_whenNotProper9_returnFalse() {
+        UserValidation userValidation =new UserValidation();
+        boolean result= userValidation.validateEmail("firstname.lastname.@gmail.com.in");
+        Assert.assertEquals(false,result);
+    }
+    @Test
+    public void enterEmail_whenNotProper10_returnFalse() {
+        UserValidation userValidation =new UserValidation();
+        boolean result= userValidation.validateEmail("firstname.lastname@gmail.com.14");
+        Assert.assertEquals(false,result);
+    }
+    @Test
+    public void enterEmail_whenNotProper11_returnFalse() {
+        UserValidation userValidation =new UserValidation();
+        boolean result= userValidation.validateEmail("firstname.lastname@gmail.com.in.org");
+        Assert.assertEquals(false,result);
+    }
 
     //UC4
 
